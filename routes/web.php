@@ -4,6 +4,8 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AkunController2;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToDoController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,3 +134,30 @@ Route::get('/template/master', [AkunController2::class, 'master']);
 Route::get('/table', [AkunController2::class, 'indexakun']);
 Route::get('/data-tables', [AkunController2::class, 'indextable']);
 Route::get('/indexakun', [AkunController2::class, 'akunindex']);
+
+//route SiswaController
+// Route::get('/student', [SiswaController::class, 'index'] )->name('studentIndex');
+// Route::get('/students/create', [SiswaController::class, 'create'] )->name('studentCreate');
+// Route::post('/student', [SiswaController::class, 'store'] )->name('studentStore');
+// Route::get('/student/{id}', [SiswaController::class, 'show'])->name('studentShow');
+// Route::get ('/student/{id}/edit', [SiswaController::class, 'edit']);
+// Route::put('/student/{id}', [SiswaController::class, 'update'])->name('studentUpdate');
+// Route::delete('/student/{id}', [SiswaController::class, 'destroy'])->name('studentDestroy');
+
+// //route dengan group
+// Route::controller(SiswaController::class)->group(function () {
+// Route::get('/student', 'index' )->name('studentIndex');
+// Route::get('/students/create', 'create' )->name('studentCreate');
+// Route::post('/student', 'store' )->name('studentStore');
+// Route::get('/student/{id}', 'show')->name('studentShow');
+// Route::get ('/student/{id}/edit', 'edit')->name('studentEdit');
+// Route::put('/student/{id}', 'update')->name('studentUpdate');
+// Route::delete('/student/{id}', 'destroy')->name('studentDestroy');
+// });
+
+//route dengan resource
+Route::resource('student', SiswaController::class);
+
+Route::resource('kelas', KelasController::class);
+
+
